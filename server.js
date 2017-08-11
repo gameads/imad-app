@@ -7,13 +7,12 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 app.get('/counter', function (req, res) {
  counter+=1;
  res.send(counter.toString());
 });
-
-
 app.get('/file-1', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'file-1.html'));
 });
